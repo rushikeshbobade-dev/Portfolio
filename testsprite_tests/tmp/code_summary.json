@@ -1,0 +1,106 @@
+{
+  "tech_stack": [
+    "TypeScript",
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "Shadcn/UI",
+    "Radix UI",
+    "Supabase",
+    "React Router",
+    "React Hook Form",
+    "Zod",
+    "Lucide React",
+    "Framer Motion",
+    "PostCSS",
+    "ESLint"
+  ],
+  "features": [
+    {
+      "name": "Navigation Component",
+      "description": "Responsive navigation bar with mobile menu toggle and smooth scrolling to sections",
+      "files": ["src/components/Navigation.tsx"]
+    },
+    {
+      "name": "Hero Section",
+      "description": "Main landing section with animated text, CTA buttons, and gradient background",
+      "files": ["src/components/Hero.tsx"]
+    },
+    {
+      "name": "About Component",
+      "description": "About section displaying personal information, skills overview, and profile image",
+      "files": ["src/components/About.tsx"]
+    },
+    {
+      "name": "Skills Showcase",
+      "description": "Interactive skills section with animated progress bars and category organization",
+      "files": ["src/components/Skills.tsx"]
+    },
+    {
+      "name": "Projects Portfolio",
+      "description": "Project showcase with image galleries, descriptions, and live/demo links",
+      "files": ["src/components/Projects.tsx"]
+    },
+    {
+      "name": "Contact Form",
+      "description": "Functional contact form with validation using React Hook Form and Supabase integration",
+      "files": ["src/components/Contact.tsx"]
+    },
+    {
+      "name": "Particle Background",
+      "description": "Animated particle background effect for visual appeal",
+      "files": ["src/components/ParticleBackground.tsx"]
+    },
+    {
+      "name": "Cursor Trail Effect",
+      "description": "Interactive cursor trail animation for enhanced user experience",
+      "files": ["src/components/CursorTrail.tsx"]
+    },
+    {
+      "name": "Footer Component",
+      "description": "Footer with navigation links, social media links, and copyright information",
+      "files": ["src/components/Footer.tsx"]
+    },
+    {
+      "name": "Supabase Integration",
+      "description": "Database and authentication services integration for contact form and user data",
+      "files": ["src/integrations/supabase/client.ts", "src/integrations/supabase/types.ts"]
+    },
+    {
+      "name": "UI Component Library",
+      "description": "Comprehensive set of reusable UI components using Shadcn/UI and Radix UI",
+      "files": ["src/components/ui/"]
+    },
+    {
+      "name": "Routing System",
+      "description": "Client-side routing setup with React Router for single-page application navigation",
+      "files": ["src/pages/Index.tsx", "src/pages/NotFound.tsx", "src/App.tsx"]
+    },
+    {
+      "name": "Custom Hooks",
+      "description": "Reusable custom hooks for mobile detection and toast notifications",
+      "files": ["src/hooks/use-mobile.tsx", "src/hooks/use-toast.ts"]
+    },
+    {
+      "name": "Utility Functions",
+      "description": "Common utility functions for class name merging and styling",
+      "files": ["src/lib/utils.ts"]
+    },
+    {
+      "name": "Styling System",
+      "description": "Tailwind CSS configuration with custom styling and responsive design",
+      "files": ["src/index.css", "src/App.css", "tailwind.config.ts", "postcss.config.js"]
+    },
+    {
+      "name": "Build Configuration",
+      "description": "Vite build configuration with React SWC, path aliases, and development tools",
+      "files": ["vite.config.ts", "tsconfig.json", "tsconfig.app.json", "tsconfig.node.json"]
+    },
+    {
+      "name": "Asset Management",
+      "description": "Image assets and static files for portfolio content",
+      "files": ["src/assets/", "public/"]
+    }
+  ]
+}
+

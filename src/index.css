@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 40% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 40% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 234 89% 61%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 271 81% 66%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 40% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 183 76% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 40% 18%;
+    --input: 222 40% 18%;
+    --ring: 234 89% 61%;
+
+    --radius: 0.75rem;
+
+    /* Portfolio specific tokens */
+    --neon-blue: 234 89% 61%;
+    --electric-purple: 271 81% 66%;
+    --deep-teal: 183 76% 45%;
+    --dark-navy: 222 47% 11%;
+    --darker-navy: 222 50% 8%;
+    
+    /* Gradient tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(234 89% 61% / 0.2), hsl(271 81% 66% / 0.2));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(234 89% 61% / 0.15), transparent 70%);
+    
+    /* Shadow tokens */
+    --shadow-glow: 0 0 40px hsl(234 89% 61% / 0.3);
+    --shadow-glow-lg: 0 0 60px hsl(234 89% 61% / 0.4);
+    --shadow-card: 0 8px 32px hsl(222 50% 8% / 0.5);
+    
+    /* Transition tokens */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Animated gradient background */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Floating animation for particles */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Glow pulse effect */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(234 89% 61% / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(234 89% 61% / 0.6); }
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(234 89% 61% / 0.2), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    100% { left: 100%; }
+  }
+
+  /* Custom cursor trail */
+  .cursor-trail {
+    pointer-events: none;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: hsl(234 89% 61% / 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+    z-index: 9999;
+  }
+}

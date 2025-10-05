@@ -1,0 +1,15 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:8081",
+  "executionArgs": {
+    "projectName": "neo-bloom-showcase-77622-main",
+    "projectPath": "C:\\Users\\Rushikesh\\Downloads\\Lovable ai porfolio\\neo-bloom-showcase-77622-main\\neo-bloom-showcase-77622-main",
+    "testIds": [],
+    "additionalInstruction": "Test the portfolio website functionality including navigation, contact form, responsive design, and interactive elements. Focus on critical functionality like contact form submission, project links, navigation menu, and responsive design.",
+    "envs": {
+      "API_KEY": ""
+    }
+  }
+}

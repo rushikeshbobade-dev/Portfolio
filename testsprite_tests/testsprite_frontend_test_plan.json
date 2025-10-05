@@ -1,0 +1,276 @@
+{
+  "project_info": {
+    "name": "neo-bloom-showcase-77622-main",
+    "type": "frontend",
+    "framework": "React + Vite",
+    "tech_stack": ["TypeScript", "React", "Tailwind CSS", "Shadcn/UI", "Supabase"],
+    "local_url": "http://localhost:8081"
+  },
+  "test_plan": {
+    "navigation_tests": [
+      {
+        "id": "nav_001",
+        "name": "Navigation Menu Visibility",
+        "description": "Verify main navigation menu is visible and functional",
+        "steps": [
+          "1. Open the portfolio website",
+          "2. Verify navigation menu is visible at the top",
+          "3. Check all menu items are present (Home, About, Skills, Projects, Contact)"
+        ],
+        "expected_result": "Navigation menu displays correctly with all sections",
+        "priority": "high"
+      },
+      {
+        "id": "nav_002", 
+        "name": "Mobile Menu Toggle",
+        "description": "Test mobile responsive navigation menu",
+        "steps": [
+          "1. Resize browser to mobile viewport",
+          "2. Verify hamburger menu appears",
+          "3. Click hamburger to open mobile menu",
+          "4. Verify menu items are accessible",
+          "5. Click hamburger again to close menu"
+        ],
+        "expected_result": "Mobile menu opens/closes correctly in mobile view",
+        "priority": "high"
+      },
+      {
+        "id": "nav_003",
+        "name": "Smooth Scrolling Navigation",
+        "description": "Test smooth scrolling to sections when clicking nav items",
+        "steps": [
+          "1. Click on 'About' navigation item",
+          "2. Verify page scrolls smoothly to About section",
+          "3. Click on 'Skills' navigation item", 
+          "4. Verify page scrolls smoothly to Skills section",
+          "5. Repeat for Projects and Contact sections"
+        ],
+        "expected_result": "Smooth scrolling animation works for all navigation links",
+        "priority": "medium"
+      }
+    ],
+    "hero_section_tests": [
+      {
+        "id": "hero_001",
+        "name": "Hero Section Loading",
+        "description": "Verify hero section loads with all elements",
+        "steps": [
+          "1. Open the website homepage",
+          "2. Verify hero section is visible",
+          "3. Check hero image loads correctly",
+          "4. Verify hero text content is displayed",
+          "5. Confirm CTA buttons are present"
+        ],
+        "expected_result": "Hero section displays complete with image, text, and buttons",
+        "priority": "high"
+      },
+      {
+        "id": "hero_002",
+        "name": "CTA Button Functionality", 
+        "description": "Test call-to-action buttons in hero section",
+        "steps": [
+          "1. Locate 'View My Work' button",
+          "2. Click the button",
+          "3. Verify page scrolls to Projects section",
+          "4. Locate 'Get In Touch' button",
+          "5. Click the button",
+          "6. Verify page scrolls to Contact section"
+        ],
+        "expected_result": "CTA buttons navigate to correct sections",
+        "priority": "high"
+      }
+    ],
+    "skills_section_tests": [
+      {
+        "id": "skills_001",
+        "name": "Skills Display",
+        "description": "Verify skills section displays all skill categories",
+        "steps": [
+          "1. Scroll to Skills section",
+          "2. Verify skill categories are displayed",
+          "3. Check individual skills are shown",
+          "4. Verify skill progress bars or indicators are visible"
+        ],
+        "expected_result": "Skills section shows all skill categories with progress indicators",
+        "priority": "medium"
+      },
+      {
+        "id": "skills_002",
+        "name": "Skills Animation",
+        "description": "Test skills animations and interactions",
+        "steps": [
+          "1. Scroll to Skills section",
+          "2. Observe if skill animations play",
+          "3. Hover over skill items",
+          "4. Verify hover effects work correctly"
+        ],
+        "expected_result": "Skills animate on scroll and respond to hover interactions",
+        "priority": "low"
+      }
+    ],
+    "projects_section_tests": [
+      {
+        "id": "projects_001",
+        "name": "Projects Display",
+        "description": "Verify projects section shows all portfolio projects",
+        "steps": [
+          "1. Scroll to Projects section",
+          "2. Verify project cards are displayed",
+          "3. Check project images load correctly",
+          "4. Verify project titles and descriptions are shown",
+          "5. Confirm project links are present"
+        ],
+        "expected_result": "Projects section displays all portfolio projects with details",
+        "priority": "high"
+      },
+      {
+        "id": "projects_002",
+        "name": "Project Links Functionality",
+        "description": "Test project external links work correctly",
+        "steps": [
+          "1. Locate 'Live Demo' links on projects",
+          "2. Click on a Live Demo link",
+          "3. Verify external link opens in new tab",
+          "4. Locate 'View Source' links",
+          "5. Click on View Source link",
+          "6. Verify GitHub repository opens"
+        ],
+        "expected_result": "Project links open correctly in new tabs",
+        "priority": "high"
+      }
+    ],
+    "contact_form_tests": [
+      {
+        "id": "contact_001",
+        "name": "Contact Form Display",
+        "description": "Verify contact form loads with all required fields",
+        "steps": [
+          "1. Scroll to Contact section",
+          "2. Verify contact form is displayed",
+          "3. Check all form fields are present (name, email, message)",
+          "4. Verify submit button is visible",
+          "5. Confirm form styling looks correct"
+        ],
+        "expected_result": "Contact form displays with all required fields and proper styling",
+        "priority": "high"
+      },
+      {
+        "id": "contact_002",
+        "name": "Form Validation",
+        "description": "Test form validation for required fields",
+        "steps": [
+          "1. Click submit button without filling form",
+          "2. Verify validation messages appear",
+          "3. Enter invalid email format without @ symbol",
+          "4. Verify email validation message appears",
+          "5. Fill in valid data and verify validation passes"
+        ],
+        "expected_result": "Form validation works correctly for all required fields",
+        "priority": "high"
+      },
+      {
+        "id": "contact_003",
+        "name": "Form Submission",
+        "description": "Test contact form submission functionality",
+        "steps": [
+          "1. Fill in all required contact form fields",
+          "2. Enter valid email address",
+          "3. Write a test message",
+          "4. Click submit button",
+          "5. Verify submission success message or redirect"
+        ],
+        "expected_result": "Contact form submits successfully and shows confirmation",
+        "priority": "critical"
+      }
+    ],
+    "responsive_design_tests": [
+      {
+        "id": "responsive_001",
+        "name": "Mobile Responsiveness",
+        "description": "Test website responsiveness across different screen sizes",
+        "steps": [
+          "1. Test desktop view (1920x1080)",
+          "2. Test tablet view (768x1024)",
+          "3. Test mobile view (375x667)",
+          "4. Verify layout adapts correctly",
+          "5. Check text remains readable",
+          "6. Verify buttons remain clickable"
+        ],
+        "expected_result": "Website is fully responsive across all screen sizes",
+        "priority": "high"
+      },
+      {
+        "id": "responsive_002",
+        "name": "Cross-Browser Compatibility",
+        "description": "Test website functionality across different browsers",
+        "steps": [
+          "1. Test in Chrome browser",
+          "2. Test in Firefox browser", 
+          "3. Test in Safari browser (if available)",
+          "4. Test in Edge browser",
+          "5. Verify consistent functionality across browsers"
+        ],
+        "expected_result": "Website functions consistently across all supported browsers",
+        "priority": "medium"
+      }
+    ],
+    "performance_tests": [
+      {
+        "id": "perf_001",
+        "name": "Page Load Speed",
+        "description": "Test page loading performance",
+        "steps": [
+          "1. Open browser developer tools",
+          "2. Navigate to network tab",
+          "3. Refresh the page",
+          "4. Check page load time",
+          "5. Verify all assets load within reasonable time"
+        ],
+        "expected_result": "Page loads quickly (< 3 seconds) with all assets",
+        "priority": "medium"
+      },
+      {
+        "id": "perf_002",
+        "name": "Image Loading",
+        "description": "Test image loading performance",
+        "steps": [
+          "1. Scroll through all sections",
+          "2. Verify images load properly",
+          "3. Check for broken images",
+          "4. Verify hero image loads without delay"
+        ],
+        "expected_result": "All images load correctly without broken links",
+        "priority": "medium"
+      }
+    ],
+    "interactive_elements_tests": [
+      {
+        "id": "interact_001",
+        "name": "Particle Background Animation",
+        "description": "Test particle background effect",
+        "steps": [
+          "1. Open the homepage",
+          "2. Verify particle animation is visible",
+          "3. Check animation runs smoothly",
+          "4. Verify animation doesn't affect performance"
+        ],
+        "expected_result": "Particle background animates smoothly without performance issues",
+        "priority": "low"
+      },
+      {
+        "id": "interact_002",
+        "name": "Cursor Trail Effect",
+        "description": "Test cursor trail animation",
+        "steps": [
+          "1. Move mouse around the page",
+          "2. Verify cursor trail effect works",
+          "3. Check animation follows cursor smoothly",
+          "4. Verify effect works in all sections"
+        ],
+        "expected_result": "Cursor trail effect works smoothly across the page",
+        "priority": "low"
+      }
+    ]
+  }
+}
+
