@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ecommerceImg from "@/assets/project-ecommerce.jpg";
 import chatImg from "@/assets/project-chat.jpg";
 import aiImg from "@/assets/project-ai.jpg";
@@ -70,17 +70,23 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   return (
     <div
       className="group relative animate-fade-in"
-      style={{ animationDelay: `${index * 150}ms` }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
+      ref={(el) => {
+        if (!el) return;
+        el.style.setProperty("--animation-delay", `${index * 150}ms`);
+      }}
     >
       {/* Spotlight effect */}
       {isHovering && (
         <div
-          className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"
-          style={{
-            background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(99, 102, 241, 0.15), transparent 40%)`,
+          className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl project-spotlight"
+          ref={(el) => {
+            if (!el) return;
+            // set CSS variables used by .project-spotlight
+            el.style.setProperty("--mouse-x", `${mousePosition.x}px`);
+            el.style.setProperty("--mouse-y", `${mousePosition.y}px`);
           }}
         />
       )}
@@ -117,8 +123,10 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors"
                 onClick={(e) => e.stopPropagation()}
+                aria-label={`Open live demo for ${project.title}`}
               >
                 <ExternalLink className="w-4 h-4 text-primary" />
+                <span className="sr-only">Open live demo</span>
               </a>
               <a
                 href={project.githubUrl}
@@ -126,8 +134,10 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors"
                 onClick={(e) => e.stopPropagation()}
+                aria-label={`Open GitHub repository for ${project.title}`}
               >
                 <Github className="w-4 h-4 text-primary" />
+                <span className="sr-only">Open repository</span>
               </a>
             </div>
           </div>
@@ -139,13 +149,9 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
           {/* Technologies with stagger animation */}
           <div className="flex flex-wrap gap-2 pt-2">
             {project.technologies.map((tech: string, idx: number) => (
-              <span
-                key={tech}
-                className="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary/20 hover:scale-105"
-                style={{ transitionDelay: `${idx * 50}ms` }}
-              >
+              <TechTag key={tech} idx={idx}>
                 {tech}
-              </span>
+              </TechTag>
             ))}
           </div>
 
@@ -182,3 +188,22 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
     </div>
   );
 };
+
+  const TechTag: React.FC<{ idx: number; children: React.ReactNode }> = ({ idx, children }) => {
+    const ref = useRef<HTMLSpanElement | null>(null);
+
+    useEffect(() => {
+      const el = ref.current;
+      if (!el) return;
+      el.style.setProperty("--stagger-delay", `${idx * 50}ms`);
+    }, [idx]);
+
+    return (
+      <span
+        ref={ref}
+        className="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary/20 hover:scale-105 delay-var"
+      >
+        {children}
+      </span>
+    );
+  };

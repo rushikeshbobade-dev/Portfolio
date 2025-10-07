@@ -113,7 +113,7 @@ export const Hero = () => {
             {/* Social Links */}
             <div className="flex justify-center lg:justify-start gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/rushikeshbobade-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-card border border-primary/30 rounded-full hover:border-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300"
@@ -122,7 +122,7 @@ export const Hero = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/rushikesh-bobade-96a69429b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-card border border-primary/30 rounded-full hover:border-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300"
@@ -142,7 +142,7 @@ export const Hero = () => {
           </div>
 
           {/* Right Column - Professional Profile Image */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-center">
             <div className="relative group">
               {/* Professional Image Frame */}
               <div className="relative">

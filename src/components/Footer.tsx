@@ -62,16 +62,17 @@ export const Footer = () => {
               <h4 className="text-lg font-semibold mb-4 text-primary">Connect</h4>
               <div className="space-y-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/rushikeshbobade-dev"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
                 >
                   <Github className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/rushikesh-bobade-96a69429b/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
@@ -80,7 +81,7 @@ export const Footer = () => {
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="mailto:rahul.sharma@email.com"
+                  href="mailto:rsk30927@gmail.com"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
                 >
                   <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />

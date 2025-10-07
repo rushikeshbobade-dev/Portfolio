@@ -269,16 +269,16 @@ export const Contact = () => {
             </Button>
           </form>
 
-          <div className="mt-8 pt-8 border-t border-primary/20 text-center">
+          {/* <div className="mt-8 pt-8 border-t border-primary/20 text-center">
             <p className="text-muted-foreground">Or email me directly at:</p>
             <a
-              href="mailto:rushikesh9060@gmail.com"
+              href="mailto:rsk30927@gmail.com"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium mt-2"
             >
               <Mail className="w-4 h-4" />
-              rushikesh9060@gmail.com
+              rsk30927@gmail.com
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

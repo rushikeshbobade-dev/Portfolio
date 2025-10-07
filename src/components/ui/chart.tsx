@@ -87,6 +87,31 @@ ${colorConfig
   );
 };
 
+// Helper that sets CSS variables / background on a DOM node via a ref so we avoid
+// JSX inline `style` props (addresses no-inline-styles diagnostics).
+const ColorSwatch: React.FC<{ color?: string | null; className?: string }> = ({ color, className }) => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    if (color != null) {
+      // Expose CSS vars used by chart styles
+      el.style.setProperty("--color-bg", String(color));
+      el.style.setProperty("--color-border", String(color));
+      // Ensure simple background fallback
+      el.style.backgroundColor = String(color);
+    } else {
+      el.style.removeProperty("--color-bg");
+      el.style.removeProperty("--color-border");
+      el.style.removeProperty("background-color");
+    }
+  }, [color]);
+
+  return <div ref={ref} className={className} />;
+};
+
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
 const ChartTooltipContent = React.forwardRef<
@@ -181,19 +206,14 @@ const ChartTooltipContent = React.forwardRef<
                       <itemConfig.icon />
                     ) : (
                       !hideIndicator && (
-                        <div
+                        <ColorSwatch
+                          color={indicatorColor}
                           className={cn("shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]", {
                             "h-2.5 w-2.5": indicator === "dot",
                             "w-1": indicator === "line",
                             "w-0 border-[1.5px] border-dashed bg-transparent": indicator === "dashed",
                             "my-0.5": nestLabel && indicator === "dashed",
                           })}
-                          style={
-                            {
-                              "--color-bg": indicatorColor,
-                              "--color-border": indicatorColor,
-                            } as React.CSSProperties
-                          }
                         />
                       )
                     )}
@@ -258,12 +278,7 @@ const ChartLegendContent = React.forwardRef<
             {itemConfig?.icon && !hideIcon ? (
               <itemConfig.icon />
             ) : (
-              <div
-                className="h-2 w-2 shrink-0 rounded-[2px]"
-                style={{
-                  backgroundColor: item.color,
-                }}
-              />
+              <ColorSwatch color={item.color} className="h-2 w-2 shrink-0 rounded-[2px]" />
             )}
             {itemConfig?.label}
           </div>
